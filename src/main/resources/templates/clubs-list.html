@@ -11,8 +11,8 @@
     <section layout:fragment="body" class="py-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h1 class="fw-bolder">Idol Near You</h1>
-                <p class="lead fw-normal text-muted mb-0">Idol in your area</p>
+                <h1 class="fw-bolder">Anime Near You</h1>
+                <p class="lead fw-normal text-muted mb-0">Anime in your area</p>
             </div>
             <div class="row gx-5">
                 <div th:each="club :${clubs}" class="col-lg-6 mb-2">
@@ -21,6 +21,7 @@
                         <a th:text="${club.title}" class="h3 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Project name</a>
                         <p th:text="${club.content}" class="lead fw-normal text-muted mb-0">Idol in your area</p>
                     </div>
+                    <a class="btn btn-primary" th:href="@{/clubs/{clubId}(clubId=${club.id})}">View</a>
                     <a class="btn btn-primary" th:href="@{/clubs/{clubId}/edit(clubId=${club.id})}">Edit</a>
                 </div>
             </div>
